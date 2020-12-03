@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cheebo's</title>
+</head>
+
+<body>
+    <header class="menubar">
+        <div w3-include-html="menu.html" class="menucontent"></div>
+    </header>
+    <main>
+        <!-- Content -->
+        <div class="fooddisplay">
+            <img src="images/Burger.png" alt="" class="foodimg">
+            <h1 class="foodtitle">Cheebo's Classic</h1>
+            <p class="foodtext">A delicious flame seared all beef burger with cheddar and gouda, lettuce, tomato, onion, pickles. And as always, you can make it your own with our choice of 4 freshly made relishes!</p>
+        </div>
+        <p>Insert cards to show ingredients.</p>
+    </main>
+    <footer>
+        © 2020 - Cheebo's Burger Co. 
+    </footer>
+</body>
+<script src="js/script.js"></script>
+<script>
+    function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+            elmnt = z[i];
+            /*search for elements with a certain atrribute:*/
+            file = elmnt.getAttribute("w3-include-html");
+            if (file) {
+                /* Make an HTTP request using the attribute value as the file name: */
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                        if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                        /* Remove the attribute, and call this function once more: */
+                        elmnt.removeAttribute("w3-include-html");
+                        includeHTML();
+                    }
+                }
+                xhttp.open("GET", file, true);
+                xhttp.send();
+                /* Exit the function: */
+                return;
+            }
+        }
+    }
+</script>
+<script>
+    includeHTML();
+</script>
+
+</html>

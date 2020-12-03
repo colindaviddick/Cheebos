@@ -1,0 +1,117 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.colourscheme {
+  color: #a74a64;
+  color: #737293;
+  color: #E78FB7;
+  color: #ebb987;
+  color: #D9C9C7;
+}
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+a, a:hover {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+  font-size: 1.4em;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  font-size: x-large;
+  background-color: rgb(241, 163, 163);
+}
+
+header {
+  height: 4em;
+  padding: 0px;
+  margin: 0px;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  /* border: red 4px solid; */
+}
+
+.cornerimg {
+  height: 4.5em;
+  margin: 0.5em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menubar {
+  display: grid;
+  place-items: center;
+}
+
+.menubar a {
+  /* border: blue 4px solid; */
+  vertical-align: middle;
+}
+
+.centredobject {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  margin-left: 10%;
+  margin-right: 10%;
+  background: white;
+}
+
+footer {
+  background: linear-gradient(180deg, rgba(238, 174, 202, 1) 25%, rgba(148, 187, 233, 1) 75%);
+  padding: 2rem;
+  text-align: center;
+  padding: 1em;
+}
+
+.menulink {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+p {}
+
+.fooddisplay {
+  background: radial-gradient(rgb(85, 46, 46) 10%, white 60%);
+  margin-top: 2em;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.foodimg {
+  width: 100%;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 3;
+}
+.foodtitle {
+  width: 100%;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+  margin-top: auto;
+  border: red 3px solid;
+}
+.foodtext {
+  width: 100%;
+  margin-top: 2em;
+  font-size: 1.5em;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 2;
+}
